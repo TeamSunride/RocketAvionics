@@ -1,6 +1,3 @@
 [submodule "lib/VirtualSensor"]
 	path = lib/VirtualSensor
 	url = https://github.com/TeamSunride/VirtualSensor/
-[submodule "lib/FIFObuffer"]
-	path = lib/FIFObuffer
-	url = https://github.com/TeamSunride/FIFObuffer
