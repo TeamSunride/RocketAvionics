@@ -2,15 +2,13 @@
 
 VirtualBarometer::VirtualBarometer()
 {
-    manufacturer = "Sparkfun";
+    manufacturer = "UNKNOWN";
     name = "BME280";
 }
 
 void VirtualBarometer::connect()
 {
-    println("Starting I2C communication.");
-    sensor.setI2CAddress(0x76);
-    sensor.beginI2C();
+    return 0;
 }
 
 // Returns temperature in a range between -40 and 85°C
@@ -19,7 +17,7 @@ float VirtualBarometer::getTemperature()
     if (isTesting()) {
         return getFloatSimulated("air_temperature");
     }
-    return sensor.readTempC();
+    return 0;
 };
 
 // Returns pressure in Pascals between a range of 30000 and 110000
@@ -28,7 +26,7 @@ float VirtualBarometer::getPressure()
     if (isTesting()) {
         return getFloatSimulated("air_pressure");
     }
-    return sensor.readFloatPressure();
+    return 0;
 };
 
 // Returns relative humidity as a percentage between 0 and 100
@@ -37,5 +35,5 @@ float VirtualBarometer::getHumidity()
     if (isTesting()) {
         return getFloatSimulated("humidity");
     }
-    return sensor.readFloatHumidity();
+    return 0;
 };
